@@ -19,6 +19,7 @@ public class LinkedListDouble {
     List iterator;
 
     public void insertionAtFirst(int data) {
+        System.out.println("Adding " + data + " at first!");
         if (head == null) {
             head = new List(data);
         }
@@ -31,6 +32,7 @@ public class LinkedListDouble {
     }
 
     public void insertAtLast(int data) {
+        System.out.println("Adding " + data + " at last!");
         if (head == null) {
             head = new List(data);
         }
@@ -46,6 +48,7 @@ public class LinkedListDouble {
     }
 
     public void insertAtIndex(int data, int index) {
+        System.out.println("Adding " + data + " at " + index + " !");
         if (head == null) {
             head = new List(data);
         }
@@ -65,6 +68,7 @@ public class LinkedListDouble {
     }
 
     public void deleteAtFirst() {
+        System.out.println("deleting at first!");
         if(head == null) {
             System.out.println("Its not exits");
         }
@@ -78,7 +82,46 @@ public class LinkedListDouble {
         }
     }
 
-    
+    public void deleteAtLast() {
+        System.out.println("deleting at last!");
+        if (head == null) {
+            System.out.println("Error at deleting");
+        }
+        else if (head.next == null) {
+            head = null;
+        }
+        else {
+            iterator = head;
+            prev = head;
+            while (iterator.next != null) {
+                prev = iterator;
+                iterator = iterator.next;
+            }
+            prev.next = null;
+            iterator.prev = null;
+            iterator = null;
+        }
+    }
+
+    public void deleteAtIndex(int index) {
+        int looper = 0;
+        iterator = head;
+        prev = head;
+        next = head;
+        for (looper = 0; looper < index - 1; looper++) {
+            prev = iterator;
+            iterator = iterator.next;
+            next = iterator.next;
+        }
+        prev.next = next;
+        iterator.prev = null;
+        iterator.next = null;
+        next.prev = prev;
+    }
+
+    public void accessAll() {
+        
+    }
 
     public static void main(String[] args) {
         LinkedListDouble lld = new LinkedListDouble();
@@ -100,7 +143,6 @@ public class LinkedListDouble {
         System.out.println("Enter the number to insert at last: ");
         int data = scan.nextInt();
         lld.insertAtLast(data);
-        */
 
         System.out.println("Insert at index: ");
         System.out.println("Enter element to insert: ");
@@ -109,5 +151,10 @@ public class LinkedListDouble {
         int index = scan.nextInt();
 
         lld.insertAtIndex(data, index);
+
+        lld.deleteAtFirst();
+        */
+
+        lld.deleteAtLast();
     }
 }
