@@ -120,7 +120,50 @@ public class LinkedListDouble {
     }
 
     public void accessAll() {
-        
+        iterator = head;
+        while (iterator != null) {
+            System.out.println(iterator.data);
+            iterator = iterator.next;
+        }
+    }
+
+    public void searchEle(int data) {
+        int looper = 0;
+        iterator = head;
+        if (head == null) {
+            System.out.println("No list found!");
+        }
+        else if (head.data == data) {
+            System.out.println("Found at 1");
+        }
+        else {
+            while (iterator != null) {
+                looper++;
+                if (iterator.data == data) {
+                    System.err.println("Found at " + (looper));
+                    break;
+                }
+                iterator = iterator.next;
+            }
+        }
+    }
+
+    public void length() {
+        int looper = 0;
+        iterator = head;
+        if (head == null) {
+            System.out.println("Length is 0");
+        }
+        else if (head.next == null) {
+            System.out.println("Length is 1");
+        }
+        else {
+            while (iterator != null) {
+                looper++;
+                iterator = iterator.next;
+            }
+            System.err.println("Length is " + looper);
+        }
     }
 
     public static void main(String[] args) {
@@ -132,29 +175,40 @@ public class LinkedListDouble {
         lld.insertionAtFirst(30);
         lld.insertionAtFirst(40);
         lld.insertionAtFirst(50);
+        lld.accessAll();
 
-        /* 
         System.out.println("Insert at First");
         System.out.println("Enter the number to insert at first: ");
         int data = scan.nextInt();
         lld.insertionAtFirst(data);
+        lld.accessAll();
 
         System.out.println("Insert at last: ");
         System.out.println("Enter the number to insert at last: ");
-        int data = scan.nextInt();
+        data = scan.nextInt();
         lld.insertAtLast(data);
+        lld.accessAll();
 
         System.out.println("Insert at index: ");
         System.out.println("Enter element to insert: ");
-        int data = scan.nextInt();
+        data = scan.nextInt();
         System.out.println("Enter index position: ");
         int index = scan.nextInt();
 
         lld.insertAtIndex(data, index);
-
+        lld.accessAll();
+        
         lld.deleteAtFirst();
-        */
+        lld.accessAll();
 
         lld.deleteAtLast();
+        lld.accessAll();
+
+        System.out.println("Enter the element to search");
+        data = scan.nextInt();
+
+        lld.searchEle(data);
+
+        lld.length();
     }
 }
