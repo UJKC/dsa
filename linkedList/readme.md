@@ -45,9 +45,9 @@ Operations:
   - deletion at index
   - access all
   - searching
-  - accessing ele (:*:)
-  - concatenation
-  - reversal
+  - accessing ele
+  - concatenation (:())
+  - reversal (:*:)
   - sorting Ascending
   - sorting Descending
   - merging Ascending

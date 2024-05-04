@@ -154,13 +154,21 @@ public class LinkedListSingle {
         System.out.println(iterator.data);
     }
 
-    /*
-    public void Concatenation() {
-        if (head == null) {
-            System.out.println(head);
+    public void reversal() {
+        System.out.println("Reversing the list: ");
+        List prev = null;
+        List current = head;
+        List next = null;
+        
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
+        head = prev;
     }
-    */
+    
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -195,6 +203,11 @@ public class LinkedListSingle {
         linkedListSingle.accessAtIndex(2);
 
         linkedListSingle.searching(20);
+
+        linkedListSingle.reversal();
+        linkedListSingle.accessAll();
         */
+
+
     }
 }
