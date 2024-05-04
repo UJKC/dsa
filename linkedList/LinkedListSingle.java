@@ -182,7 +182,6 @@ public class LinkedListSingle {
 
         linkedListSingle.accessAll();
 
-        /* 
         System.out.println("Enter the element to insert: ");
         int element_lls = scanner.nextInt();
         System.out.println("Enter the index to insert: ");
@@ -206,8 +205,5 @@ public class LinkedListSingle {
 
         linkedListSingle.reversal();
         linkedListSingle.accessAll();
-        */
-
-
     }
 }
